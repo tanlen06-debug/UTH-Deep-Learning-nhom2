@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dataset downloaded by torchvision
+data/
+
+# Model checkpoints
+*.pth
+*.pt
+
+# Temporary files
+*.tmp
+
+# Logs
+*.log
