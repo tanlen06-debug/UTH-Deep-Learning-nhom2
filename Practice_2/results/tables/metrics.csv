@@ -1,0 +1,1 @@
+﻿experiment_name,member,model,strategy,optimizer,learning_rate,batch_size,epochs,val_accuracy,test_accuracy,precision_macro,recall_macro,f1_macro,training_time_seconds,notes
