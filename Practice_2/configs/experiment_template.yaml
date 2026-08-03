@@ -1,9 +1,0 @@
-experiment_name: replace_me
-model_name: resnet18
-strategy: feature_extraction
-optimizer: adam
-learning_rate: 0.001
-batch_size: 32
-epochs: 10
-weight_decay: 0.0
-seed: 42
