@@ -25,6 +25,14 @@ data/
 # Model checkpoints
 *.pth
 *.pt
+# Cho phép lưu thư mục checkpoint chính thức của Practice 1
+!Practice_1/models/
+
+# Checkpoint baseline của TV4
+!Practice_1/models/fashion_mnist_mlp_trained.pth
+
+# Checkpoint tốt nhất của TV6
+!Practice_1/models/best_hyperparameter_model.pth
 
 # Temporary files
 *.tmp
