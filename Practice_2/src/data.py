@@ -47,10 +47,10 @@ def build_transforms(
     Tạo hai pipeline biến đổi ảnh:
 
     - train_transform:
-      Có data augmentation để làm đa dạng dữ liệu huấn luyện.
+    Có data augmentation để làm đa dạng dữ liệu huấn luyện.
 
     - eval_transform:
-      Không có augmentation, sử dụng cho validation và test.
+    Không có augmentation, sử dụng cho validation và test.
     """
 
     train_transform = transforms.Compose(
