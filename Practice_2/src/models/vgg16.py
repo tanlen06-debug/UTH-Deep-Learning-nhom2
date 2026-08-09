@@ -69,7 +69,8 @@ def save_checkpoint(model: nn.Module, path: Path) -> None:
 def load_checkpoint(path: Path, config: VGG16Config) -> nn.Module:
     """Tải lại model đã lưu trọng số từ checkpoint."""
     model = build_vgg16(config)
-    model.load_state_dict(torch.load(path))
+    state_dict = torch.load(path, map_location="cpu", weights_only=True)
+    model.load_state_dict(state_dict)
     return model
 
 
