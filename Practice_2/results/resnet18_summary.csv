@@ -1,3 +1,0 @@
-Model,Strategy,Trainable Parameters,Optimizer,Learning Rate,Batch Size,Epochs,Best Epoch,Best Val Accuracy (%),Training Time (s),Checkpoint
-ResNet-18 A,FC only,5130,Adam,0.001,32,5,2,81.16,807.04,resnet18_fc_only_best.pth
-ResNet-18 B,Layer4 + FC,8398858,Adam,0.001,32,5,5,92.76,811.02,resnet18_layer4_fc_best.pth
