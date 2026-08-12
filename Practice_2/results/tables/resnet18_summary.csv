@@ -1,0 +1,3 @@
+Model,Strategy,Total Params,Trainable Params,Frozen Params,Best Val Accuracy (%),Best Epoch,Training Time (s)
+ResNet-18 A - FC only,FC only,11181642,5130,11176512,80.82,4,1062.53
+ResNet-18 B - Layer4 + FC,Layer4 + FC,11181642,8398858,2782784,92.9,5,1107.62
