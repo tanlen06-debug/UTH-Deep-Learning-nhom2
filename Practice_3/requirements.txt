@@ -1,5 +1,5 @@
 transformers
- datasets
- evaluate
- torch
- accelerate
+datasets
+evaluate
+torch
+accelerate
