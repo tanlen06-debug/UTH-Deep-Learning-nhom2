@@ -1,4 +1,4 @@
-"""Evaluate the best Practice 2 checkpoints on the common CIFAR-10 test set."""
+# Đánh giá các checkpoint tốt nhất của Bài tập 2 trên tập kiểm tra CIFAR-10 chung.
 from __future__ import annotations
 
 import argparse

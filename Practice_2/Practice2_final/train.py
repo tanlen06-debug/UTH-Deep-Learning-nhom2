@@ -1,6 +1,6 @@
-"""Command-line training engine for Practice 2.
+"""Các công cụ huấn luyện cho bài .
 
-Examples
+Ví dụ
 --------
 python train.py --model resnet18 --strategy fc_only
 python train.py --model resnet18 --strategy layer4_fc
@@ -163,12 +163,12 @@ def train_model(
     log_dir: str | Path,
     checkpoint_path: str | Path,
 ):
-    """Shared training/validation/checkpoint/TensorBoard engine."""
+    # Công cụ huấn luyện/validation/checkpoint/TensorBoard dùng chung.
     try:
         from torch.utils.tensorboard import SummaryWriter
     except ModuleNotFoundError as exc:
         raise RuntimeError(
-            "TensorBoard is required for training. Run `pip install -r requirements.txt`."
+            # TensorBoard là bắt buộc cho quá trình huấn luyện. Chạy lệnh pip install -r requirements.txt.
         ) from exc
     writer = SummaryWriter(log_dir=str(log_dir))
     history = {
@@ -231,8 +231,8 @@ def train_model(
     total_time = time.time() - start_time
     writer.close()
 
-    # Keep the timing in the best checkpoint so predict.py can build the
-    # same final comparison table without duplicating handwritten values.
+    # Giữ lại thông tin thời gian trong checkpoint tốt nhất để predict.py 
+    # có thể xây dựng cùng bảng so sánh cuối cùng mà không cần lặp lại các giá trị viết tay.
     checkpoint_file = Path(checkpoint_path)
     if checkpoint_file.exists():
         try:

@@ -1,4 +1,4 @@
-"""Model definitions for ResNet-18, VGG-16 and DenseNet-121."""
+# Các hàm xây dựng mô hình cho ResNet-18, VGG-16 và DenseNet-121 với tùy chọn tiền huấn luyện  và đóng băng các tầng .
 from __future__ import annotations
 
 from typing import Literal
@@ -72,7 +72,7 @@ def build_densenet121(
 
 
 def enable_densenet_last_block(model) -> None:
-    """Fine-tune DenseNet-121 denseblock4 and classifier."""
+    # bật các tham số của dếnblock4 và bộ phân loại để huấn luyện
     for parameter in model.features.denseblock4.parameters():
         parameter.requires_grad = True
     for parameter in model.classifier.parameters():

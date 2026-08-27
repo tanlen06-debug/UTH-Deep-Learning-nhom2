@@ -1,9 +1,9 @@
-"""Central configuration for Practice 2.
+"""Cấu hình trung tâm cho Bài tập 2.
 
-The notebook had the same project/data/device/seed setup repeated in several
-places. This module keeps those values in one place while preserving the
-experiment settings used in the source material.
+Notebook có cùng thiết lập về project/dữ liệu/thiết bị/seed được lặp lại ở nhiều chỗ.
+Module này giữ tất cả các giá trị đó ở một nơi, đồng thời vẫn bảo toàn các thiết lập thí nghiệm được sử dụng trong tài liệu gốc.
 """
+## import các tính năng tương lai để đảm bảo tính tương thích với các phiên bản
 from __future__ import annotations
 
 from dataclasses import dataclass

@@ -1,4 +1,4 @@
-"""Shared CIFAR-10 data pipeline used by all experiments."""
+"""Pipeline dữ liệu CIFAR-10 dùng chung cho tất cả các thí nghiệm."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -12,7 +12,7 @@ from config import CIFAR10_CLASSES, DataConfig, IMAGENET_MEAN, IMAGENET_STD
 
 
 def build_transforms(image_size: int = 224, augmentation: bool = True):
-    """Return the train and test transforms described in Practice 2."""
+    # Thiết lập các phép biến đổi dữ liệu cho tập huấn luyện và kiểm tra.
     train_ops = [transforms.Resize((image_size, image_size))]
     if augmentation:
         train_ops.extend(
@@ -45,12 +45,8 @@ def _split_indices(n_items: int, val_ratio: float, seed: int):
 
 
 def build_dataloaders(config: DataConfig) -> dict[str, Any]:
-    """Build train/validation/test loaders with one deterministic split.
-
-    The train and validation subsets use exactly the same indices for every
-    experiment. Only the training transform may change for augmentation
-    experiments.
-    """
+# build_dataloaders nhận một cấu hình DataConfig và trả về một từ điển chứa các tập dữ liệu và Dataloaders cho huấn luyện,
+# xác thực và kiểm tra. Nó cũng trả về danh sách
     config.data_dir.mkdir(parents=True, exist_ok=True)
     train_transform, test_transform = build_transforms(
         image_size=config.image_size,

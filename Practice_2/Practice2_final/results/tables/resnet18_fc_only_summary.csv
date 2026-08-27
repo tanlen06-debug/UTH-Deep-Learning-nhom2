@@ -1,0 +1,2 @@
+Model,Strategy,Learning Rate,Batch Size,Optimizer,Best Val Accuracy (%),Best Epoch,Training Time (s),Checkpoint
+resnet18,fc_only,0.001,32,adam,81.42,4,321.98455834388733,resnet18_fc_only_best.pth
