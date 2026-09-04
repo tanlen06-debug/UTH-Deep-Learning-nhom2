@@ -1,0 +1,4 @@
+Model,Test loss,Test accuracy (%),Precision macro (%),Recall macro (%),F1-score macro (%),Training time (s)
+ResNet-18,0.2575,91.76,91.91,91.76,91.71,1107.62
+VGG-16,0.3925,88.1,88.2,88.1,88.0,52018.1
+DenseNet-121,0.2695,91.18,91.43,91.18,91.21,19425.69
