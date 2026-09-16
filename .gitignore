@@ -46,5 +46,26 @@ data/
 *.bin
 **/checkpoint-*/
 **/fine_tuned_imdb_distilbert/
-# Raw NIH dataset
+
+
+# ==========================================
+# Member 02 - NIH ChestX-ray14 Coursework
+# ==========================================
+
+# Rule "data/" phía trên ignore mọi thư mục data.
+# Cho phép Git theo dõi riêng data của Member 02.
+!CourseWork/Member_02_Data/data/
+
+# Cho phép theo dõi dữ liệu đã xử lý
+!CourseWork/Member_02_Data/data/processed/
+
+# Các file split cần bàn giao
+!CourseWork/Member_02_Data/data/processed/train.csv
+!CourseWork/Member_02_Data/data/processed/val.csv
+!CourseWork/Member_02_Data/data/processed/test.csv
+
+# Không push file index trung gian nếu không cần bàn giao
+CourseWork/Member_02_Data/data/processed/zip_image_index.csv
+
+# TUYỆT ĐỐI không push NIH raw dataset (~42 GB)
 CourseWork/Member_02_Data/data/data NIH xray14/
