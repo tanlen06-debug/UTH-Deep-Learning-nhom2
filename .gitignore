@@ -39,3 +39,12 @@ data/
 
 # Logs
 *.log
+
+.venv-gpu/
+
+*.safetensors
+*.bin
+**/checkpoint-*/
+**/fine_tuned_imdb_distilbert/
+# Raw NIH dataset
+CourseWork/Member_02_Data/data/data NIH xray14/
