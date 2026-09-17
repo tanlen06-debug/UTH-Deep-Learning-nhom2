@@ -1,0 +1,68 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "plain_text",
+  "dataset_name": "imdb",
+  "dataset_size": 133202802,
+  "description": "",
+  "download_size": 83446840,
+  "features": {
+    "labels": {
+      "names": [
+        "neg",
+        "pos"
+      ],
+      "_type": "ClassLabel"
+    },
+    "input_ids": {
+      "feature": {
+        "dtype": "int32",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "token_type_ids": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "attention_mask": {
+      "feature": {
+        "dtype": "int8",
+        "_type": "Value"
+      },
+      "_type": "List"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 216649642,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 33435948,
+      "num_examples": 25000,
+      "dataset_name": "imdb"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 32653810,
+      "num_examples": 25000,
+      "dataset_name": "imdb"
+    },
+    "unsupervised": {
+      "name": "unsupervised",
+      "num_bytes": 67113044,
+      "num_examples": 50000,
+      "dataset_name": "imdb"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
