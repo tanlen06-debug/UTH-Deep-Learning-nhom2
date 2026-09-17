@@ -1,6 +1,6 @@
 # Trạng thái kết quả Member 05
 
-**Chưa có kết quả huấn luyện/đánh giá NIH.** Không có archive.zip trong repository được truy cập. Môi trường không cài được PyTorch và sau đó mất kết nối; Python tests, forward pass và notebook chưa được chạy.
+**Chưa có kết quả huấn luyện/đánh giá NIH.** Không có archive.zip trong repository được truy cập. Môi trường không có PyTorch/torchvision và repository không có ảnh NIH. Kiểm tra cú pháp đã thành công; 8 kiểm thử metadata đã pass, 7 kiểm thử runtime được skip do thiếu PyTorch.
 
 ## Đã xác minh thực tế
 
@@ -14,11 +14,11 @@
 
 Không có giá trị bắt buộc rỗng, tuổi ngoài [1,100], tên ảnh/zip_member không khớp, ảnh/zip_member trùng trong mỗi split. Cả ba cặp split có patient/image/zip_member overlap bằng 0. Audit này chỉ chứng minh tính nhất quán metadata; không chứng minh ảnh tồn tại, đọc được hoặc đúng nội dung.
 
-metadata_audit.json lưu Git blob SHA của từng CSV và các số đếm. Đây không phải kết quả chạy tests/test_augmentation.py. Khi chạy code, validate_splits sẽ kiểm tra lại file local và tạo SHA-256.
+metadata_audit.json lưu Git blob SHA của từng CSV và các số đếm. Lệnh `python -m unittest discover -s CourseWork/Member_05_Augmentation/tests -v` đã chạy: 15 tests, 8 pass và 7 skip. Các test bị skip đều cần PyTorch/torchvision. Khi chạy trong môi trường đầy đủ, validate_splits sẽ kiểm tra lại file local và tạo SHA-256.
 
 ## Chưa xác minh
 
-- Tests Python/PyTorch và notebook chạy từ đầu đến cuối.
+- 7 runtime tests dùng PyTorch/torchvision và notebook chạy từ đầu đến cuối.
 - Đường dẫn ảnh trong ZIP, ảnh bị lỗi và chất lượng augmentation trên ảnh thật.
 - MAE/MSE/RMSE của E1–E4, checkpoint và thời gian training.
 - Hiệu quả tổng quát hóa của augmentation.
