@@ -1,0 +1,45 @@
+{
+  "overlaps": {
+    "train_test": {
+      "images": 0,
+      "members": 0,
+      "patients": 0
+    },
+    "train_val": {
+      "images": 0,
+      "members": 0,
+      "patients": 0
+    },
+    "val_test": {
+      "images": 0,
+      "members": 0,
+      "patients": 0
+    }
+  },
+  "source_commit": "4210d4f58de1edb14fc61f2105cebdec73e16d2f",
+  "splits": {
+    "test": {
+      "git_blob_sha": "164d1f5829d4a10e02ac4badeb0d4cf539668582",
+      "images": 16890,
+      "max_age": 93,
+      "min_age": 1,
+      "patients": 4621
+    },
+    "train": {
+      "git_blob_sha": "294c44ab08efe2f97874c38ff4da073e7464ffff",
+      "images": 78831,
+      "max_age": 95,
+      "min_age": 1,
+      "patients": 21561
+    },
+    "val": {
+      "git_blob_sha": "4f65ac902518aaec1ecc91da45aadea1591b2bd1",
+      "images": 16383,
+      "max_age": 91,
+      "min_age": 1,
+      "patients": 4620
+    }
+  },
+  "status": "metadata_verified_training_not_run",
+  "test_images_read": false
+}
