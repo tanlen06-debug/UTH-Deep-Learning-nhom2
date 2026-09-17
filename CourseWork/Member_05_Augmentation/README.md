@@ -142,6 +142,92 @@ Notebook Member 04 hiện dùng dữ liệu hồi quy tổng hợp và MLP. Các
 
 Member 05 chỉ chọn checkpoint bằng validation MAE. Sau khi cấu hình được chốt, Member 06 có thể dùng `src/evaluate.py` để tính test MAE, MSE và RMSE. File này kiểm tra fingerprint của split, model và checkpoint trước khi đọc ảnh test.
 
+## Dữ liệu lớn: không đưa ảnh lên GitHub
+
+NIH ChestX-ray14 có hơn 100.000 ảnh và dung lượng hàng chục GB. Repository chỉ lưu:
+
+- code và notebook;
+- ba file CSV split;
+- cấu hình và fingerprint;
+- bảng metric, biểu đồ và báo cáo;
+- checkpoint nếu nhóm có nơi lưu artifact phù hợp.
+
+Root `.gitignore` đã loại trừ `CourseWork/Member_02_Data/data/data NIH xray14/`, file `.pt` và `.pth`. Vì vậy có thể đặt dữ liệu trong thư mục bị ignore mà Git không tải nó lên.
+
+### Cách 1 — Chạy trên máy cá nhân
+
+Tải dữ liệu một lần từ [nguồn NIH](https://nihcc.app.box.com/v/ChestXray-NIHCC) và lưu ngoài repository, ví dụ:
+
+```text
+D:/datasets/NIH-ChestXray14/archive.zip
+```
+
+PowerShell:
+
+```powershell
+$env:NIH_XRAY_ZIP = "D:\datasets\NIH-ChestXray14\archive.zip"
+jupyter notebook
+```
+
+Linux/macOS:
+
+```bash
+export NIH_XRAY_ZIP="/data/NIH-ChestXray14/archive.zip"
+jupyter notebook
+```
+
+Notebook đọc biến `NIH_XRAY_ZIP`; file không cần nằm trong repository.
+
+### Cách 2 — Google Colab với Google Drive
+
+Lưu `archive.zip` trên Drive một lần, mount Drive rồi đặt biến môi trường:
+
+```python
+from google.colab import drive
+drive.mount("/content/drive")
+
+import os
+os.environ["NIH_XRAY_ZIP"] = (
+    "/content/drive/MyDrive/datasets/NIH-ChestXray14/archive.zip"
+)
+```
+
+Clone repository vào `/content`, cài requirements và chạy notebook. Output cần bàn giao có thể copy về Drive; không commit ảnh hoặc checkpoint lớn.
+
+### Cách 3 — Kaggle Notebook
+
+Dùng dataset NIH đã được lưu trên Kaggle làm input cho notebook. Kaggle mount input ở chế độ chỉ đọc, nên không phải upload ảnh vào repository. Nếu input cung cấp file ZIP, đặt:
+
+```python
+import os
+os.environ["NIH_XRAY_ZIP"] = "/kaggle/input/<ten-dataset>/archive.zip"
+```
+
+Nếu dataset Kaggle đã giải nén thành các thư mục `images_001`, `images_002`, ... thì nén lại trong vùng làm việc hoặc điều chỉnh Dataset loader để đọc thư mục. Cách đơn giản nhất với code hiện tại là dùng đúng archive có cấu trúc `zip_member` khớp ba CSV.
+
+### Cách 4 — Tải trực tiếp trên máy chủ/VM
+
+Dữ liệu cũng được công bố qua Google Cloud Storage tại:
+
+```text
+gs://gcs-public-data--healthcare-nih-chest-xray
+```
+
+Bucket dùng cơ chế Requester Pays, nên cần Google Cloud project có billing. Phương án này phù hợp với VM/GPU cloud và không cần chuyển dữ liệu qua máy cá nhân. Xem [tài liệu Google Cloud về NIH Chest X-ray](https://docs.cloud.google.com/healthcare-api/docs/resources/public-datasets/nih-chest).
+
+### Quy ước làm việc nhóm
+
+Mỗi thành viên tự cấu hình đường dẫn dữ liệu trên máy hoặc môi trường chạy. Nhóm chỉ chia sẻ cùng:
+
+- commit/branch code;
+- SHA/fingerprint của CSV split;
+- manifest cấu hình;
+- validation/test metrics;
+- biểu đồ;
+- đường dẫn artifact/checkpoint ngoài GitHub khi cần.
+
+Điều này bảo đảm mọi người dùng cùng split và recipe mà không sao chép dataset qua Git.
+
 ## Cài đặt
 
 Từ thư mục gốc repository:
