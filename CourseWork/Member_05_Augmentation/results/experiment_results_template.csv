@@ -1,0 +1,5 @@
+experiment,loss,augmentation,best_epoch,val_mae,val_mse,val_rmse,test_mae,test_mse,test_rmse,status
+E1,MSE,False,,,,,,,pending
+E2,MAE,False,,,,,,,pending
+E3,MSE,True,,,,,,,pending
+E4,MAE,True,,,,,,,pending
